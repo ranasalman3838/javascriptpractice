@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Day 3 </h1>
+
+
+<script>
+    {#var a=['s','j','l','h']#}
+    {#var b=a.slice(1)#}
+    {#a.splice(2,2,'rahul')#}
+    {#document.write(a)#}
+    var ages=[10,20,30,18];
+    document.write(ages);
+    var b=ages.filter(checkadult);
+    document.write("<br>"+b)
+    var age=18;
+    function checkadult(age){
+        return age>=18
+    }
+</script>
+</body>
+</html>

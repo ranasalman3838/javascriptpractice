@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day4</title>
+</head>
+<body>
+    <h1>Day4 of javascript</h1>
+
+<script>
+var a={
+    fname:'Salman',
+    lname:'ahmed',
+    age:22,
+    email:'ranasalmanahmed38@gmail.com',
+    skills:['python', 'c++', 'javascript', 'bootstrap','html css', 'django','git'],
+    salary: function (){
+        return 150000;
+    },
+    fullname: function(){
+        return this.fname + " "+ this.lname;
+    }
+}
+document.write(a.fullname());
+console.log(a)
+</script>
+
+</body>
+</html>
