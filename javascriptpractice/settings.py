@@ -11,8 +11,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django_heroku
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -25,7 +30,7 @@ SECRET_KEY = 'django-insecure-ufgy=f=#&*w+iqgu4n-0@4ap_n0hz=xf7g^_uf(!zq^)$kyjm3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['salmanjspractice.herokuapp']
 
 
 # Application definition
@@ -75,11 +80,31 @@ WSGI_APPLICATION = 'javascriptpractice.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'd3j4adh9n1jvhb',
+
+        'USER': 'cfdihekxcwvzgq',
+
+        'PASSWORD': '022420e489b6cae8513faf35155b6d06b351db5dae992f15a748664a4bb2e8d9',
+
+        'HOST': 'ec2-3-225-204-194.compute-1.amazonaws.com',
+
+        'PORT': '5432',
+
     }
+
 }
 
 
@@ -120,10 +145,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-
-]
+STATIC_ROOT= os.path.join(BASE_DIR,'staticfiles')
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
